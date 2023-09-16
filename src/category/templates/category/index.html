@@ -5,9 +5,12 @@
 {% block content%}
 <div>
 
-    {{ list }}
     {% for i in list %}
-    <p> {{ i }} </p>
+    <p> {{ i.name }} </p>
+    <p> {{ i.price }} </p>
+    {% if i.image %}
+        <img src="{{ i.image.url }}" alt="image">
+    {% endif %}
     {% endfor %}
 </div>
 {%endblock%}
